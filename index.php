@@ -12,6 +12,7 @@ if($min <10)
 
 }
 $file = file("/home/work/bidmax_monitor/data/wins_status_".$tail);
+$fileUnknown = file("/home/work/bidmax_monitor/data/unknown_status");
 ?>
 <title>Win Status</title>
 
@@ -47,27 +48,24 @@ $file = file("/home/work/bidmax_monitor/data/wins_status_".$tail);
                                  <th>loss</th>
                                  <th>error</th>
                                  <th>unmatched</th>
-                                 <th>unknown</th>
-                                 <th>buddget current</th>
-                                 <th>buddget all</th>
                               </tr>
                            </thead>
                            <tbody>
-                         <?php
-                            foreach($file as &$line)
-                                {
-                                    echo "<tr>";
-                                    $cols = explode(",",$line);
-                                    foreach($cols as $col)
-                                    {
-                                        echo "<td>";
-                                        echo $col;
-                                        echo "</td>";
-                                    }
-                                    echo "</tr>";
-                                }
+<?php
+foreach($file as &$line)
+{
+    echo "<tr>";
+    $cols = explode(",",$line);
+    foreach($cols as $col)
+    {
+        echo "<td>";
+        echo $col;
+        echo "</td>";
+    }
+    echo "</tr>";
+}
 
-                         ?>
+?>
                           </tbody>
                      </table>
 
@@ -76,7 +74,120 @@ $file = file("/home/work/bidmax_monitor/data/wins_status_".$tail);
         </div>
 
     <div class="col-lg-1">
+
     </div>
    </div>
+    <div class="row">
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-10">
+            <div class="panel panel-info">
+                   <div class="panel-heading">
+                          <h2 class="panel-title">Unknown Status</h2>
+                   </div>
+                   <div class="panel-body">
+                        <table class="table">
+                           <thead>
+                              <tr>
+                                 <th>name</th>
+                                 <th>unknown bundle</th>
+                                 <th>unknown model</th>
+                                 <th>unknown make</th>
+                                 <th>unknown osv</th>
+                                 <th>unknown carrier</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+<?php
+foreach($fileUnknown as $lineIndex=>$line)
+{
+
+    echo "<tr>";
+    $cols = explode(",",$line);
+    foreach($cols as $colIndex=>$col)
+    {
+        echo "<td>";
+        echo $col;
+        echo "</td>";
+        // echoDownloadLink($lineIndex,$colIndex);
+    }
+    echo "</tr>";
+}
+
+?>
+                          </tbody>
+                     </table>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <div class="col-lg-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+        </div>
+
+        <div class="col-lg-2">
+            <h5> 
+                <a href="downloadReport.php?name=inmobi_cat_result.csv">inmobi_cat_result.csv</a>
+            </h5>
+            <h5> 
+        </div>
+        <div class="col-lg-2">
+            <h5> 
+                <a href="downloadReport.php?name=inmobi_model_result.csv">inmobi_model_result.csv</a>
+            </h5>
+        </div>
+        <div class="col-lg-2">
+            <h5> 
+                <a href="downloadReport.php?name=inmobi_make_result.csv">inmobi_make_result.csv</a>
+            </h5>
+        </div>
+        <div class="col-lg-2">
+            <h5> 
+                <a href="downloadReport.php?name=inmobi_osv_result.csv">inmobi_osv_result.csv</a>
+            </h5>
+        </div>
+        <div class="col-lg-2">
+            <h5> 
+                <a href="downloadReport.php?name=inmobi_carrier_result.csv">inmobi_carrier_result.csv</a>
+            </h5>
+        </div>
+        <div class="col-lg-1">
+        </div>
+    </div>
+    <div class="row">
+       <div class="col-lg-1">
+       </div>
+        <div class="col-lg-2">
+            <h5> 
+                <a href="downloadReport.php?name=bes_model_result.csv">bes_model_result.csv</a>
+            </h5>
+        </div>
+        <div class="col-lg-2">
+            <h5> 
+                <a href="downloadReport.php?name=bes_make_result.csv">bes_make_result.csv</a>
+            </h5>
+        </div>
+        <div class="col-lg-2">
+            <h5> 
+                <a href="downloadReport.php?name=bes_osv_result.csv">bes_osv_result.csv</a>
+            </h5>
+        </div>
+        <div class="col-lg-2">
+            <h5> 
+                <a href="downloadReport.php?name=bes_carrier_result.csv">bes_carrier_result.csv</a>
+            </h5>
+        </div>
+
+        <div class="col-lg-1">
+        </div>
+    </div>
+
+   </div>
+
  </div>
 </div>
