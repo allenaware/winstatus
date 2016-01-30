@@ -121,9 +121,6 @@ $fileUnknown = file("/home/work/bidmax_monitor/data/unknown_status");
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-1">
-        </div>
-
         <div class="col-lg-2">
             <h5>
                 <a href="downloadReport.php?name=inmobi_cat_result.csv">inmobi_cat_result.csv</a>
@@ -150,12 +147,8 @@ $fileUnknown = file("/home/work/bidmax_monitor/data/unknown_status");
                 <a href="downloadReport.php?name=inmobi_carrier_result.csv">inmobi_carrier_result.csv</a>
             </h5>
         </div>
-        <div class="col-lg-1">
-        </div>
     </div>
     <div class="row">
-        <div class="col-lg-1">
-        </div>
         <div class="col-lg-2">
             <h5>
                 <a href="downloadReport.php?name=bes_model_result.csv">bes_model_result.csv</a>
@@ -177,7 +170,7 @@ $fileUnknown = file("/home/work/bidmax_monitor/data/unknown_status");
             </h5>
         </div>
 
-        <div class="col-lg-1">
+        <div class="col-lg-3">
         </div>
     </div>
 
