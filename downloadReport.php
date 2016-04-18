@@ -1,6 +1,11 @@
 <?php
 $fileDir = "/home/work/bidmax_monitor/report/";
 $fileName = $_GET['name'];
+if(strpos($fileName,'/')!==false)
+{
+    echo "非法访问";
+    exit;
+}
 function download($fileDir,$fileName)
 {
 ob_clean();

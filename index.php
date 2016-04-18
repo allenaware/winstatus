@@ -14,7 +14,7 @@ $fileUnknown = file("/home/work/bidmax_monitor/data/unknown_status");
 ?>
 <title>Win Status</title>
 
-<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://bootswatch.com/darkly/bootstrap.min.css" rel="stylesheet">
 
 <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
 
@@ -120,59 +120,65 @@ $fileUnknown = file("/home/work/bidmax_monitor/data/unknown_status");
         <div class="col-lg-1">
         </div>
     </div>
+  </div>
+    <div class="well">
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-1 col-sm-1"></div>
+        <div class="col-lg-2 col-sm-2">
             <h5>
-                <a href="downloadReport.php?name=inmobi_cat_result.csv">inmobi_cat_result.csv</a>
+                <a href="downloadReport.php?name=bridge_cat_result.csv">bridge_cat_result.csv</a>
             </h5>
             <h5>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-sm-2">
             <h5>
-                <a href="downloadReport.php?name=inmobi_model_result.csv">inmobi_model_result.csv</a>
+                <a href="downloadReport.php?name=bridge_model_result.csv">bridge_model_result.csv</a>
             </h5>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-sm-2">
             <h5>
-                <a href="downloadReport.php?name=inmobi_make_result.csv">inmobi_make_result.csv</a>
+                <a href="downloadReport.php?name=bridge_make_result.csv">bridge_make_result.csv</a>
             </h5>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-sm-2">
             <h5>
-                <a href="downloadReport.php?name=inmobi_osv_result.csv">inmobi_osv_result.csv</a>
+                <a href="downloadReport.php?name=bridge_osv_result.csv">bridge_osv_result.csv</a>
             </h5>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-sm-2">
             <h5>
-                <a href="downloadReport.php?name=inmobi_carrier_result.csv">inmobi_carrier_result.csv</a>
+                <a href="downloadReport.php?name=bridge_carrier_result.csv">bridge_carrier_result.csv</a>
             </h5>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-1 col-sm-1">
+        </div>
+        <div class="col-lg-2 col-sm-2">
             <h5>
                 <a href="downloadReport.php?name=bes_model_result.csv">bes_model_result.csv</a>
             </h5>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-sm-2">
             <h5>
                 <a href="downloadReport.php?name=bes_make_result.csv">bes_make_result.csv</a>
             </h5>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-sm-2">
             <h5>
                 <a href="downloadReport.php?name=bes_osv_result.csv">bes_osv_result.csv</a>
             </h5>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-sm-2">
             <h5>
                 <a href="downloadReport.php?name=bes_carrier_result.csv">bes_carrier_result.csv</a>
             </h5>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-sm-3">
         </div>
     </div>
 
+ </div>
 </div>
 
