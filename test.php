@@ -253,8 +253,13 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
                         echo $statMonitor['1h_stat']['Fail rate'];
                         echo "</td>";
                         echo "<td>";
-                        // echo $statMonitor['1h_stat']['Reasons'];
-                        echo "test";
+                        $resons = $statMonitor['1h_stat']['Reasons'];
+                        foreach($resons as $key=>$value)
+                        {
+                            echo $key.":".$value.",";
+                        }
+ 
+
                         echo "</td>";
                         echo "<td>";
                         echo $statMonitor['1h_stat']['Total errors'];
@@ -302,8 +307,11 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
                         echo $statMonitor['24h_stat']['Fail rate'];
                         echo "</td>";
                         echo "<td>";
-                        // echo $statMonitor['1h_stat']['Reasons'];
-                        echo "test";
+                        $resons = $statMonitor['24h_stat']['Reasons'];
+                        foreach($resons as $key=>$value)
+                        {
+                            echo $key.":".$value.",";
+                        }
                         echo "</td>";
                         echo "<td>";
                         echo $statMonitor['24h_stat']['Total errors'];
