@@ -36,93 +36,93 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
 </head>
 <div class='well'>
     <div class="row">
-            <div class="col-lg-1">
-            </div>
-            <div class="col-lg-10">
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">Win Status</h2>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>name</th>
-                                <th>bids</th>
-                                <th>events</th>
-                                <th>wins</th>
-                                <th>loss</th>
-                                <th>error</th>
-                                <th>unmatched</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            foreach ($file as &$line) {
-                                echo "<tr>";
-                                $cols = explode(",", $line);
-                                foreach ($cols as $col) {
-                                    echo "<td>";
-                                    echo $col;
-                                    echo "</td>";
-                                }
-                                echo "</tr>";
-                            }
-
-                            ?>
-                            </tbody>
-                        </table>
-
-                    </div>
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-10">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Win Status</h2>
                 </div>
-            </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>bids</th>
+                            <th>events</th>
+                            <th>wins</th>
+                            <th>loss</th>
+                            <th>error</th>
+                            <th>unmatched</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach ($file as &$line) {
+                            echo "<tr>";
+                            $cols = explode(",", $line);
+                            foreach ($cols as $col) {
+                                echo "<td>";
+                                echo $col;
+                                echo "</td>";
+                            }
+                            echo "</tr>";
+                        }
 
-            <div class="col-lg-1">
+                        ?>
+                        </tbody>
+                    </table>
 
+                </div>
             </div>
         </div>
+
+        <div class="col-lg-1">
+
+        </div>
+    </div>
     <div class="row">
-            <div class="col-lg-1">
-            </div>
-            <div class="col-lg-10">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">Unknown Status</h2>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>name</th>
-                                <th>unknown bundle</th>
-                                <th>unknown model</th>
-                                <th>unknown make</th>
-                                <th>unknown osv</th>
-                                <th>unknown carrier</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            foreach ($fileUnknown as $lineIndex => $line) {
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Unknown Status</h2>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>unknown bundle</th>
+                            <th>unknown model</th>
+                            <th>unknown make</th>
+                            <th>unknown osv</th>
+                            <th>unknown carrier</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach ($fileUnknown as $lineIndex => $line) {
 
-                                echo "<tr>";
-                                $cols = explode(",", $line);
-                                foreach ($cols as $colIndex => $col) {
-                                    echo "<td>";
-                                    echo $col;
-                                    echo "</td>";
-                                    // echoDownloadLink($lineIndex,$colIndex);
-                                }
-                                echo "</tr>";
+                            echo "<tr>";
+                            $cols = explode(",", $line);
+                            foreach ($cols as $colIndex => $col) {
+                                echo "<td>";
+                                echo $col;
+                                echo "</td>";
+                                // echoDownloadLink($lineIndex,$colIndex);
                             }
+                            echo "</tr>";
+                        }
 
-                            ?>
-                            </tbody>
-                        </table>
+                        ?>
+                        </tbody>
+                    </table>
 
-                    </div>
                 </div>
             </div>
+        </div>
 
         <div class="col-lg-1">
         </div>
@@ -248,28 +248,26 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
                         <tbody>
                         <?php
 
-                            echo "<tr>";
-                            echo "<td>";
-                            echo $statMonitor['1h_stat']['Fail rate'];
-                            echo "</td>";
-                            echo "<td>";
-                            // echo $statMonitor['1h_stat']['Reasons'];
-                            echo "test";
-                            echo "</td>";
-                            echo "<td>";
-                            echo $statMonitor['1h_stat']['Total errors'];
-                            echo "</td>";
+                        echo "<tr>";
+                        echo "<td>";
+                        echo $statMonitor['1h_stat']['Fail rate'];
+                        echo "</td>";
+                        echo "<td>";
+                        // echo $statMonitor['1h_stat']['Reasons'];
+                        echo "test";
+                        echo "</td>";
+                        echo "<td>";
+                        echo $statMonitor['1h_stat']['Total errors'];
+                        echo "</td>";
 
-                            echo "<td>";
-                            echo $statMonitor['1h_stat']['Total pings'];
-                            echo "</td>";
+                        echo "<td>";
+                        echo $statMonitor['1h_stat']['Total pings'];
+                        echo "</td>";
 
-                            echo "<td>";
-                            echo $statMonitor['1h_stat']['Total successes'];
-                            echo "</td>";
-                            echo "</tr>";
-
-
+                        echo "<td>";
+                        echo $statMonitor['1h_stat']['Total successes'];
+                        echo "</td>";
+                        echo "</tr>";
 
 
                         ?>
@@ -278,15 +276,7 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
 
                 </div>
             </div>
-        </div>
 
-        <div class="col-lg-1">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-1">
-        </div>
-        <div class="col-lg-10">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h2 class="panel-title">Monitor Status 24 Hour</h2>
@@ -305,28 +295,26 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
                         <tbody>
                         <?php
 
-                            echo "<tr>";
-                            echo "<td>";
-                            echo $statMonitor['24h_stat']['Fail rate'];
-                            echo "</td>";
-                            echo "<td>";
-                            // echo $statMonitor['1h_stat']['Reasons'];
-                            echo "test";
-                            echo "</td>";
-                            echo "<td>";
-                            echo $statMonitor['24h_stat']['Total errors'];
-                            echo "</td>";
+                        echo "<tr>";
+                        echo "<td>";
+                        echo $statMonitor['24h_stat']['Fail rate'];
+                        echo "</td>";
+                        echo "<td>";
+                        // echo $statMonitor['1h_stat']['Reasons'];
+                        echo "test";
+                        echo "</td>";
+                        echo "<td>";
+                        echo $statMonitor['24h_stat']['Total errors'];
+                        echo "</td>";
 
-                            echo "<td>";
-                            echo $statMonitor['24h_stat']['Total pings'];
-                            echo "</td>";
+                        echo "<td>";
+                        echo $statMonitor['24h_stat']['Total pings'];
+                        echo "</td>";
 
-                            echo "<td>";
-                            echo $statMonitor['24h_stat']['Total successes'];
-                            echo "</td>";
-                            echo "</tr>";
-
-
+                        echo "<td>";
+                        echo $statMonitor['24h_stat']['Total successes'];
+                        echo "</td>";
+                        echo "</tr>";
 
 
                         ?>
@@ -334,18 +322,14 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
                     </table>
 
                 </div>
+                </div>
             </div>
-        </div>
-
-        <div class="col-lg-1">
-        </div>
     </div>
-
     <div class="row">
-        <a href="./debug.php" class="btn btn-primary btn-lg" role="button">BidMax Debug</a>
-        <div class="col-lg-1">
-        </div>
+                <a href="./debug.php" class="btn btn-primary btn-lg" role="button">BidMax Debug</a>
+                <div class="col-lg-1">
+                </div>
 
-    </div>
+            </div>
 </div>
 
