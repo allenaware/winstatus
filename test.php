@@ -34,8 +34,7 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
     <meta http-equiv="refresh" content="60">
 
 </head>
-<div class='well well-lg'>
-    <div class="status-index">
+<div class='well'>
         <div class="row">
             <div class="col-lg-1">
             </div>
@@ -129,8 +128,6 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
         <div class="col-lg-1">
         </div>
     </div>
-</div>
-<div class="well">
     <div class="row">
         <div class="col-lg-1 col-sm-1"></div>
         <div class="col-lg-2 col-sm-2">
