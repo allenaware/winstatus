@@ -229,7 +229,7 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
     <div class="row">
         <div class="col-lg-1">
         </div>
-        <div class="col-lg-10">
+        <div class="col-lg-5">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h2 class="panel-title">Monitor Status 1 Hour</h2>
@@ -276,6 +276,8 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
 
                 </div>
             </div>
+        </div>
+        <div class="col-lg-5">
 
             <div class="panel panel-info">
                 <div class="panel-heading">
@@ -323,7 +325,10 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
 
                 </div>
                 </div>
-            </div>
+        </div>
+        <div class="col-lg-1">
+            
+        </div>
     </div>
     <div class="row">
                 <a href="./debug.php" class="btn btn-primary btn-lg" role="button">BidMax Debug</a>
