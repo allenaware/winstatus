@@ -11,16 +11,14 @@ if ($min < 10) {
 }
 $file = file("/home/work/bidmax_monitor/data/wins_status_" . $tail);
 $fileUnknown = file("/home/work/bidmax_monitor/data/unknown_status");
-$fileLogMonitor =[];
-if(file_exists("/home/work/bidmax_monitor/log_monitor.out.ok"))
-{
+$fileLogMonitor = [];
+if (file_exists("/home/work/bidmax_monitor/log_monitor.out.ok")) {
     $fileLogMonitor = file("/home/work/bidmax_monitor/log_monitor.out");
 }
-$statMonitor=[];
-if(file_exists('/home/work/bidmax_monitor/mon_stat.log'))
-{
+$statMonitor = [];
+if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
     $statString = file_get_contents("/home/work/bidmax_monitor/mon_stat.log");
-    $statMonitor = json_decode($statString,true);
+    $statMonitor = json_decode($statString, true);
 }
 
 ?>
@@ -36,7 +34,6 @@ if(file_exists('/home/work/bidmax_monitor/mon_stat.log'))
     <meta http-equiv="refresh" content="60">
 
 </head>
-
 <div class='well well-lg'>
     <div class="status-index">
         <div class="row">
@@ -132,8 +129,8 @@ if(file_exists('/home/work/bidmax_monitor/mon_stat.log'))
         <div class="col-lg-1">
         </div>
     </div>
-  </div>
-    <div class="well">
+</div>
+<div class="well">
     <div class="row">
         <div class="col-lg-1 col-sm-1"></div>
         <div class="col-lg-2 col-sm-2">
@@ -191,97 +188,94 @@ if(file_exists('/home/work/bidmax_monitor/mon_stat.log'))
         </div>
     </div>
 
- </div>
-        <div class="row">
-            <div class="col-lg-1">
-            </div>
-            <div class="col-lg-10">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">Log Status</h2>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>IP</th>
-                                <th>Log Path</th>
-                                <th>Status</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            foreach ($fileLogMonitor as $lineIndex => $line) {
+    <div class="row">
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Log Status</h2>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>IP</th>
+                            <th>Log Path</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach ($fileLogMonitor as $lineIndex => $line) {
 
-                                echo "<tr>";
-                                $cols = explode("\t", $line);
-                                foreach ($cols as $colIndex => $col) {
-                                    echo "<td>";
-                                    echo $col;
-                                    echo "</td>";
-                                    // echoDownloadLink($lineIndex,$colIndex);
-                                }
-                                echo "</tr>";
+                            echo "<tr>";
+                            $cols = explode("\t", $line);
+                            foreach ($cols as $colIndex => $col) {
+                                echo "<td>";
+                                echo $col;
+                                echo "</td>";
+                                // echoDownloadLink($lineIndex,$colIndex);
                             }
+                            echo "</tr>";
+                        }
 
-                            ?>
-                            </tbody>
-                        </table>
+                        ?>
+                        </tbody>
+                    </table>
 
-                    </div>
                 </div>
             </div>
-
         </div>
+
         <div class="col-lg-1">
         </div>
     </div>
-        <div class="row">
-            <div class="col-lg-1">
-            </div>
-            <div class="col-lg-10">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">Log Status</h2>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>IP</th>
-                                <th>Log Path</th>
-                                <th>Status</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            foreach ($fileLogMonitor as $lineIndex => $line) {
+    <div class="row">
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Log Status</h2>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>IP</th>
+                            <th>Log Path</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach ($fileLogMonitor as $lineIndex => $line) {
 
-                                echo "<tr>";
-                                $cols = explode("\t", $line);
-                                foreach ($cols as $colIndex => $col) {
-                                    echo "<td>";
-                                    echo $col;
-                                    echo "</td>";
-                                    // echoDownloadLink($lineIndex,$colIndex);
-                                }
-                                echo "</tr>";
+                            echo "<tr>";
+                            $cols = explode("\t", $line);
+                            foreach ($cols as $colIndex => $col) {
+                                echo "<td>";
+                                echo $col;
+                                echo "</td>";
+                                // echoDownloadLink($lineIndex,$colIndex);
                             }
+                            echo "</tr>";
+                        }
 
-                            ?>
-                            </tbody>
-                        </table>
+                        ?>
+                        </tbody>
+                    </table>
 
-                    </div>
                 </div>
             </div>
-
         </div>
+
         <div class="col-lg-1">
         </div>
     </div>
+    <div class="row">
+        <a href="./debug.php" class="btn btn-primary btn-lg" role="button">BidMax Debug</a>
+    </div>
+</div>
 
-</div>
-<div class="row">
-  <a href="./debug.php" class="btn btn-primary btn-lg" role="button">BidMax Debug</a>
-</div>
