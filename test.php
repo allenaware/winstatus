@@ -35,7 +35,7 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
 
 </head>
 <div class='well'>
-        <div class="row">
+    <div class="row">
             <div class="col-lg-1">
             </div>
             <div class="col-lg-10">
@@ -81,7 +81,7 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
 
             </div>
         </div>
-        <div class="row">
+    <div class="row">
             <div class="col-lg-1">
             </div>
             <div class="col-lg-10">
@@ -124,7 +124,6 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
                 </div>
             </div>
 
-        </div>
         <div class="col-lg-1">
         </div>
     </div>
@@ -184,7 +183,6 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
         <div class="col-lg-3 col-sm-3">
         </div>
     </div>
-
     <div class="row">
         <div class="col-lg-1">
         </div>
@@ -272,7 +270,13 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
         </div>
     </div>
     <div class="row">
+        <div class="col-lg-1">
+        </div>
+
         <a href="./debug.php" class="btn btn-primary btn-lg" role="button">BidMax Debug</a>
+        <div class="col-lg-1">
+        </div>
+
     </div>
 </div>
 
