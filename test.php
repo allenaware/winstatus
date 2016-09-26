@@ -20,6 +20,11 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
     $statString = file_get_contents("/home/work/bidmax_monitor/mon_stat.log");
     $statMonitor = json_decode($statString, true);
 }
+$fileProcessMonitor =[];
+if(file_exists('/home/work/bidmax_monitor/process_monitor.out'))
+{
+    $fileProcessMonitor = file('/home/work/bidmax_monitor/process_monitor.out');
+}
 
 ?>
 <title>Win Status</title>
@@ -229,6 +234,49 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
     <div class="row">
         <div class="col-lg-1">
         </div>
+        <div class="col-lg-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Process Status</h2>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>IP</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach ($fileProcessMonitor as $lineIndex => $line) {
+
+                            echo "<tr>";
+                            $cols = explode("\t", $line);
+                            foreach ($cols as $colIndex => $col) {
+                                echo "<td>";
+                                echo $col;
+                                echo "</td>";
+                                // echoDownloadLink($lineIndex,$colIndex);
+                            }
+                            echo "</tr>";
+                        }
+
+                        ?>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-1">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-1">
+        </div>
         <div class="col-lg-5">
             <div class="panel panel-info">
                 <div class="panel-heading">
@@ -336,48 +384,6 @@ if (file_exists('/home/work/bidmax_monitor/mon_stat.log')) {
         </div>
         <div class="col-lg-1">
             
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-1">
-        </div>
-        <div class="col-lg-10">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Process Status</h2>
-                </div>
-                <div class="panel-body">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>IP</th>
-                            <th>Status</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        foreach ($fileProcessMonitor as $lineIndex => $line) {
-
-                            echo "<tr>";
-                            $cols = explode("\t", $line);
-                            foreach ($cols as $colIndex => $col) {
-                                echo "<td>";
-                                echo $col;
-                                echo "</td>";
-                                // echoDownloadLink($lineIndex,$colIndex);
-                            }
-                            echo "</tr>";
-                        }
-
-                        ?>
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-1">
         </div>
     </div>
     <div class="row">
