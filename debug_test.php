@@ -158,6 +158,14 @@ function syntaxHighlight(json) {
 var raw = $('#result').text();
 var obj = JSON.parse(raw);
 $('#result').html(syntaxHighlight(obj));
+$('.btn').on("click",function(){
+      localStorage.reload=1;
+})
+if(localStorage.reload ==1)
+{
+    $('.btn').attr('disabled',true);
+}
+
 </script>
 <style>
     pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
