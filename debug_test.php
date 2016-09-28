@@ -56,7 +56,7 @@ if(array_key_exists('adspot',$_POST))
                         <h2 class="panel-title">BidMax Debug Request</h2>
                     </div>
                     <div class="panel-body">
-                        <form action="./debug.php" method="post">
+                        <form action="./debug_test.php" method="post">
                         <br>
                             Request Json:
                             <br>
@@ -87,7 +87,7 @@ if(array_key_exists('adspot',$_POST))
                         <h2 class="panel-title">Simple BidMax Debug Request</h2>
                     </div>
                     <div class="panel-body">
-                        <form action="./debug.php" method="post">
+                        <form action="./debug_test.php" method="post">
                         <br>
                            Request Adspot ID:
                             <br>
