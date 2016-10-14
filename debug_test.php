@@ -159,11 +159,17 @@ var raw = $('#result').text();
 var obj = JSON.parse(raw);
 $('#result').html(syntaxHighlight(obj));
 $('.btn').on("click",function(){
-      localStorage.reload=1;
+      localStorage.reload="1";
 })
-if(localStorage.reload ==1)
+if(localStorage.reload =="1")
 {
-    $('.btn').attr('disabled',true);
+    $('.btn').prop('disabled',true);
+    setTimeout(function(){
+      localStorage.reload="0";
+      $('.btn').prop('disabled',false);
+    },
+    3000);
+
 }
 
 </script>

@@ -31,6 +31,11 @@ if(file_exists('/home/work/bidmax_monitor/budget_monitor.out'))
     $fileBudgetMonitor = file('/home/work/bidmax_monitor/budget_monitor.out');
 
 }
+$diskMonitor=[];
+if(file_exists('/home/work/bidmax_monitor/disk_monitor.out'))
+{
+    $diskMonitor = file('/home/work/bidmax_monitor/disk_monitor.out');
+}
 ?>
 <title>Win Status</title>
 
@@ -321,6 +326,49 @@ if(file_exists('/home/work/bidmax_monitor/budget_monitor.out'))
         <div class="col-lg-1">
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Disk Usage Status</h2>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>IP</th>
+                            <th>Data Disk Usage %</th>
+                            <th>System Disk Usage %</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach ($diskMonitor as $lineIndex => $line) {
+
+                            echo "<tr>";
+                            $cols = explode("\t", $line);
+                            foreach ($cols as $colIndex => $col) {
+                                echo "<td>";
+                                echo $col;
+                                echo "</td>";
+                            }
+                            echo "</tr>";
+                        }
+
+                        ?>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-1">
+        </div>
+    </div>
+
 
 
     <div class="row">
@@ -435,6 +483,8 @@ if(file_exists('/home/work/bidmax_monitor/budget_monitor.out'))
             
         </div>
     </div>
+
+
     <div class="row">
                 <a href="./debug.php" class="btn btn-primary btn-lg" role="button">BidMax Debug</a>
                 <div class="col-lg-1">
